@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog & Berita Wisata Offroad Malang | Gemilang Katun</title>
+    <meta name="description"
+        content="Kumpulan tips offroad, berita terbaru, dan panduan wisata Bromo & Malang dari Gemilang Katun.">
+    <link rel="canonical" href="https://provideroffroadmalang.vercel.app/blog.html">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog Gemilang Katun Outbound",
+      "url": "https://provideroffroadmalang.vercel.app/blog.html",
+      "description": "Berita dan tips seputar offroad dan wisata Bromo.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Katun Outbound",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://provideroffroadmalang.vercel.app/img/logo.png"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        /* =========================================
+           0. GLOBAL STYLE & VARIABLES
+           ========================================= */
+        :root {
+            --primary-color: #2c3e50;
+            /* Dark Slate Blue */
+            --primary-dark: #1a252f;
+            --accent-color: #e67e22;
+            /* Pumpkin Orange */
+            --accent-hover: #d35400;
+            --light-gray: #f8f9fa;
+            --text-dark: #333333;
+            --section-padding: 100px 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .navbar-brand,
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Utility Classes */
+        .text-accent {
+            color: var(--accent-color) !important;
+        }
+
+        .bg-accent {
+            background-color: var(--accent-color) !important;
+        }
+
+        .bg-light-gray {
+            background-color: var(--light-gray);
+        }
+
+        section {
+            padding: var(--section-padding);
+        }
+
+        /* Button Custom Style */
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: white;
+            border: 2px solid var(--accent-color);
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-accent:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+            color: white;
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+            padding: 10px 30px;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           1. NAVBAR STYLE
+           ========================================= */
+        .navbar {
+            padding: 15px 0;
+            background-color: rgba(44, 62, 80, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+
+        /* =========================================
+           2. BLOG HEADER STYLE
+           ========================================= */
+        .page-header {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('img/hero.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px 0;
+            /* Padding atas besar kompensasi fixed navbar */
+            color: white;
+            text-align: center;
+        }
+
+        .breadcrumb-item a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* =========================================
+           3. BLOG CARDS & SEARCH
+           ========================================= */
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Search Bar Style */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            z-index: 10;
+        }
+
+        .form-control-search {
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control-search:focus {
+            box-shadow: 0 5px 20px rgba(230, 126, 34, 0.2);
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-search {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            border-radius: 50px;
+            padding: 10px 25px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-search:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Pagination Style */
+        .page-link {
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .page-link:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .page-item.disabled .page-link {
+            color: #ccc;
+        }
+
+        /* =========================================
+           4. FOOTER STYLE
+           ========================================= */
+        footer {
+            background-color: var(--primary-dark) !important;
+        }
+
+        footer h5,
+        footer h6 {
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        footer a:hover {
+            color: var(--accent-color) !important;
+            padding-left: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* =========================================
+           5. FLOATING BUTTONS
+           ========================================= */
+        .floating-btn-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        #scrollTopBtn {
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .float-wa {
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse-animation 2s infinite;
+        }
+
+        .float-wa:hover {
+            background-color: #128c7e;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: var(--primary-color);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .navbar .btn-accent {
+                width: 100%;
+                margin-left: 0 !important;
+                margin-top: 10px;
+            }
+
+            footer {
+                text-align: center;
+            }
+
+            footer .d-flex {
+                justify-content: center;
+            }
+
+            .floating-btn-container {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-compass-fill text-warning"></i> Gemilang
+                Katun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#products">Paket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#gallery">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                </ul>
+                <a href="https://wa.me/6282211221909" class="btn btn-accent ms-lg-3 rounded-pill px-4">Booking WA</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Berita & Artikel</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bg-light-gray" style="padding-top: 50px;">
+        <div class="container">
+
+            <div class="search-container">
+                <input type="text" id="searchInput" class="form-control form-control-search"
+                    placeholder="Cari artikel tips, rute, atau promo..." onkeyup="filterBlog()">
+                <button class="btn btn-search" type="button"><i class="bi bi-search"></i></button>
+            </div>
+
+            <div class="row g-4" id="blogContainer">
+
+                <div class="col-md-4 blog-item">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/art1.webp" class="card-img-top" alt="Persiapan Offroad Batu Malang" loading="lazy"
+                            width="400" height="250">
+                        <div class="card-body d-flex flex-column">
+                            <small class="text-muted"><i class="bi bi-calendar3"></i> 12 Jan 2026</small>
+                            <h3 class="h5 card-title fw-bold mt-2">5 Tips Persiapan Sebelum Offroad di Batu</h3>
+                            <p class="card-text text-muted small">Persiapan fisik dan perlengkapan apa saja yang wajib
+                                dibawa agar trip tetap nyaman dan aman bagi pemula...</p>
+                            <a href="artikel-1.html" class="text-accent text-decoration-none fw-bold mt-auto small">Baca
+                                Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 blog-item">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/art2.webp" class="card-img-top" alt="Jeep 4x4 Terbaru Gemilang Katun"
+                            loading="lazy" width="400" height="250">
+                        <div class="card-body d-flex flex-column">
+                            <small class="text-muted"><i class="bi bi-calendar3"></i> 05 Jan 2026</small>
+                            <h3 class="h5 card-title fw-bold mt-2">Upgrade Armada: Jeep 4x4 Terbaru Kami</h3>
+                            <p class="card-text text-muted small">Demi kenyamanan pelanggan, Gemilang Katun mendatangkan
+                                3 unit Jeep Hardtop baru dengan suspensi yang lebih empuk...</p>
+                            <a href="artikel-2.html" class="text-accent text-decoration-none fw-bold mt-auto small">Baca
+                                Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 blog-item">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="img/art3.webp" class="card-img-top" alt="Wisata Pasir Berbisik Bromo" loading="lazy"
+                            width="400" height="250">
+                        <div class="card-body d-flex flex-column">
+                            <small class="text-muted"><i class="bi bi-calendar3"></i> 28 Des 2025</small>
+                            <h3 class="h5 card-title fw-bold mt-2">Mencoba Rute Baru: Lembah Pasir Berbisik</h3>
+                            <p class="card-text text-muted small">Eksplorasi jalur baru yang lebih menantang untuk para
+                                profesional offroader dengan pemandangan lembah yang eksotis...</p>
+                            <a href="artikel-3.html" class="text-accent text-decoration-none fw-bold mt-auto small">Baca
+                                Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="noResult" class="col-12 text-center py-5" style="display: none;">
+                    <h4 class="text-muted">Artikel tidak ditemukan :(</h4>
+                    <p>Coba kata kunci lain.</p>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-center mt-5">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-2">
+        <div class="container">
+            <div class="row g-4 mb-4 align-items-start">
+                <div class="col-lg-4 col-md-12 text-lg-start text-center">
+                    <h5 class="fw-bold text-warning mb-3">Gemilang Katun Outbound</h5>
+                    <p class="small text-white-50">Penyedia layanan wisata offroad dan outbound terdepan di Malang Raya.
+                        Mengutamakan keselamatan dan kepuasan pelanggan sejak 2025.</p>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="fw-bold mb-3 text-warning">Tautan</h6>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-white-50">Beranda</a>
+                        </li>
+                        <li class="mb-2"><a href="index.html#about"
+                                class="text-decoration-none text-white-50">Tentang</a></li>
+                        <li class="mb-2"><a href="index.html#services"
+                                class="text-decoration-none text-white-50">Layanan</a></li>
+                        <li class="mb-2"><a href="index.html#products"
+                                class="text-decoration-none text-white-50">Paket</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="fw-bold mb-3 text-warning">Network</h6>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white-50">Network 1</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white-50">Network 2</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white-50">Network 3</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-white-50">Network 4</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 text-lg-start text-center">
+                    <h6 class="fw-bold mb-3 text-warning">Ikuti Kami</h6>
+                    <div class="d-flex gap-3 justify-content-lg-start justify-content-center">
+                        <a href="#" class="text-white fs-5 hover-accent"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5 hover-accent"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5 hover-accent"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="text-white fs-5 hover-accent"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <a href="https://wa.me/6282211221909" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                            <i class="bi bi-whatsapp"></i> Chat Admin
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center small text-white-50">
+                &copy; 2026 Gemilang Katun Outbound. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-btn-container">
+        <button onclick="scrollToTop()" id="scrollTopBtn" title="Kembali ke atas">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+        <a href="https://wa.me/6282211221909?text=Halo%20Admin,%20saya%20baca%20blog%20dan%20tertarik%20tanya%20paket..."
+            class="float-wa" target="_blank">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // 1. Script Pencarian (Search)
+        function filterBlog() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var container = document.getElementById("blogContainer");
+            var items = container.getElementsByClassName("blog-item");
+            var noResult = document.getElementById("noResult");
+            var hiddenCount = 0;
+
+            for (var i = 0; i < items.length; i++) {
+                var title = items[i].getElementsByTagName("h3")[0]; // Sesuaikan h3
+                var desc = items[i].getElementsByTagName("p")[0];
+
+                if (title || desc) {
+                    var txtTitle = title.textContent || title.innerText;
+                    var txtDesc = desc.textContent || desc.innerText;
+
+                    if (txtTitle.toUpperCase().indexOf(filter) > -1 || txtDesc.toUpperCase().indexOf(filter) > -1) {
+                        items[i].style.display = "";
+                    } else {
+                        items[i].style.display = "none";
+                        hiddenCount++;
+                    }
+                }
+            }
+
+            // Tampilkan pesan jika semua item tersembunyi
+            if (hiddenCount === items.length) {
+                noResult.style.display = "block";
+            } else {
+                noResult.style.display = "none";
+            }
+        }
+
+        // 2. Script Scroll to Top
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
